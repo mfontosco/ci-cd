@@ -8,13 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest --no-watch",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
     "*.{js, jsx,ts,tsx}": [
-        "eslint --fix"
-        ]
-    },
+      "eslint --fix"
+    ]
+  },
   "dependencies": {
     "next": "15.1.2",
     "react": "^19.0.0",
