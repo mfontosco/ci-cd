@@ -1,21 +1,23 @@
 name: Run linter and tests on push
-  on:
-    push:
+
+on:
+   push:
       branches:
-      main
-     jobs:
-  run-linter-and-tests:
-    runs-on: ubuntu-latest
+         - main
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+jobs:
+   run-linter-and-tests:
+      runs-on: ubuntu-latest
 
-      - name: Install dependencies
-        run: npm i
+      steps:
+         - name: Checkout code
+           uses: actions/checkout@v4
 
-      - name: Lint code
-        run: npm run lint
+         - name: Install dependencies
+           run: npm i
 
-      - name: Run tests
-        run: npm test
+         - name: Lint code
+           run: npm run lint
+
+         - name: Run tests
+           run: npm test
