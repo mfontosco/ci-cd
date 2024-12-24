@@ -8,25 +8,28 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest --no-watch",
-    "prepare": "husky",
+    "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "*.{js, jsx,ts,tsx}": [
-      "eslint --fix"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
     ]
+  },
+  "eslintConfig": {
+    "extends": "next/core-web-vitals"
   },
   "dependencies": {
     "next": "15.1.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@testing-library/react": "^16.1.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.2",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^15.1.2",
     "husky": "^9.1.7",
     "jsdom": "^25.0.1",
     "lint-staged": "^15.2.11",
